@@ -64,6 +64,7 @@ aside a {
     border-radius: 5px;
     width: 90%;
     display: table;
+    background-color: white;
 
 }
 .tableRow {
@@ -167,7 +168,7 @@ footer {
     padding: 15px;
     margin-bottom: 40px;
 }
-.cards:hover {
+.card:hover {
     box-shadow:  8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .card img {
