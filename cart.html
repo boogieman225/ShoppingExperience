@@ -23,7 +23,7 @@
     <main>
         <aside>
             <div id="sideBarHeading">
-                CART
+                CORDER SUMMARY
             </div>
             <div id="sideBarContainer">
 
@@ -31,21 +31,47 @@
 
                 <div class="tableRow">
                     <div class="tableCell">
-                        Clown Umbrella
+                        Subtotal
                     </div>
                     <div class="tableCell">
-                        &dollar; 29.95
+                        &dollar; 58.89
                     </div>
-                </div>
-                <div class="tableRow">
-                    <div class="tableCell borderBottom">
-    
-                    </div>
-                    <a href="#" class="tableCell borderBottom removeLink">Remove</a>
                 </div>
 
-       
+                <!-- tablerow start -->
+
+                <div class="tableRow">
+                    <div class="tableCell">
+                        Shipping
+                    </div>
+                    <div class="tableCell">
+                        &dollar; 3.00
+                    </div>
+                </div>
+
+                <!-- tablerow start -->
+
+                <div class="tableRow ">
+                    <div class="tableCell borderBottom">
+                        Sales Tax
+                    </div>
+                    <div class="tableCell borderBottom">
+                        &dollar; 3.59
+                    </div>
+                </div>
+
+                <!-- tablerow start -->
+
+                <div class="tableRow bold">
+                    <div class="tableCell">
+                        Total
+                    </div>
+                    <div class="tableCell">
+                        &dollar; 65.48
+                    </div> 
+                </div>
             </div>
+
             <div id="cartButtons">
                 <button id="clearCartButton">
                     Clear Cart
@@ -55,57 +81,61 @@
                 </button>
             </div>
         </aside>
+    
         <div id="mainContentContainer">
 
             <!--Card Container-->
 
-            <div id="cardContainer">
-                <div class="card">
-                    <div id="cardNumber1">
+            <div id="cartCardContainer">
+
+                <div class="cartCard">
+                    <div class="cartCardFlex">
                         <img src="images/shop/thumbnails/ClownUmbrella_Thumb.jpg" alt="Clown figurine">
-                        <div class="cardText">
-                            <h4>Clown Umbrella</h4>
-                            <p>A porcelain figurine of a clown holding an umbrella and riding a unicycle</p>
-                            <p>&dollar; 29.95</p>
-                            <button class="cartButton">Add to Cart</button>
+                        <p class="cartTitle">Clown Umbrella</p>
+                        <p class="cartDescription">A porcelain figurine of a clown holding an umbrella and riding a unicycle</p>
+                        <div class="cartQuantity">
+                            <input type="number" value="1" min="1" max="5" ><br>
                         </div>
+                        <p class="cartPrice">&dollar; 29.95</p>
                     </div>
+                    <p class="textAlignRight removeMargins">
+                        <a href="#" class="removelink">Remove</a>
+                    </p>
                 </div>
-            
 
             <!--Card Container-->
 
-            
-                <div class="card">
-                    <div id="cardNumber2">
-                        <img src="images/shop/thumbnails/ElephantFigurines_Thumb.jpg" alt="Elephent Figurings">
-                        <div class="cardText">
-                            <h4>Elephant Figurings</h4>
-                            <p>White elephant ceramic figurines decorated with various fine color</p>
-                            <p>&dollar; 18.95</p>
-                            <button class="cartButton">Add to Cart</button>
-                        </div>
+            <div class="cartCard">
+                <div class="cartCardFlex">
+                    <img src="images/shop/thumbnails/ElephantFigurines_Thumb.jpg" alt="Elephent Figuring">
+                    <p class="cartTitle">Elephant Figurings</p>
+                    <p class="cartDescription">White elephant ceramic figurines decorated with various fine color</p>
+                    <div class="cartQuantity">
+                        <input type="number" value="1" min="1" max="5" ><br>
                     </div>
+                    <p class="cartPrice">&dollar; 18.95</p>
                 </div>
-            
+                <p class="textAlignRight removeMargins">
+                    <a href="#" class="removelink">Remove</a>
+                </p>
+            </div>
 
             <!--Card Container-->
 
-            
-                <div class="card">
-                    <div id="cardNumber3">
-                        <img src="images/shop/thumbnails/SquishyCaterpillar_Thumb.jpg" alt="Squishy Caterpillar">
-                        <div class="cardText">
-                            <h4>Squishy Caterpillar</h4>
-                            <p>A squashy, spiky, multi-colored caterpillar</p>
-                            <p>&dollar; 9.99</p>
-                            <button class="cartButton">Add to Cart</button>
-                        </div>
+            <div class="cartCard">
+                <div class="cartCardFlex">
+                    <img src="images/shop/thumbnails/SquishyCaterpillar_Thumb.jpg" alt="Squishy Caterpillar">
+                    <p class="cartTitle">Squishy Caterpillar</p>
+                    <p class="cartDescription">A squashy, spiky, multi-colored caterpillar</p>
+                    <div class="cartQuantity">
+                        <input type="number" value="1" min="1" max="5" ><br>
                     </div>
+                    <p class="cartPrice">&dollar; 9.99</p>
                 </div>
-
-        </div>
-        </div>
+                <p class="textAlignRight removeMargins">
+                    <a href="#" class="removelink">Remove</a>
+                </p>
+            </div>
     </main>
     <footer>
         <div id="socialMediaLinks">
