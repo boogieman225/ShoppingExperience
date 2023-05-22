@@ -6,7 +6,7 @@ let products = [
     // clown umbrella
 
    {
-    id: "1",
+    id: 1,
     image: imagePath + "ClownUmbrella_thumb.jpg",
     name: "Clown Umbrella",
     description: "A porcelain figurine of a clown holding an umbrella and riding a unicycle",
@@ -16,7 +16,7 @@ let products = [
     // elephant figurines
 
     {
-    id: "2",
+    id: 2,
     image: imagePath + "ElephantFigurines_thumb.jpg",
     name: "Elephant Figurines",
     description: "White elephant ceramic figurines decorated with various fine color",
@@ -26,7 +26,7 @@ let products = [
     // squishy caterpillar
 
     {
-    id: "3",
+    id: 3,
     image: imagePath + "SquishyCaterpillar_Thumb.jpg",
     name: "Squishy Caterpillar",
     description: "A squashy, spiky, multi-colored caterpillar",
@@ -36,7 +36,7 @@ let products = [
     // mini cactus
 
     {
-    id: "4",
+    id: 4,
     image: imagePath + "MiniCactus_Thumb.jpg",
     name: "Mini Cactus",
     description: "A miniature cactus in a pink vase",
@@ -46,7 +46,7 @@ let products = [
     // nano nanoblocks
 
     {
-    id: "5",
+    id: 5,
     image: imagePath + "Nanoblocks_Thumb.jpg",
     name: "Nano Nanoblocks",
     description: "The smallest connection blocks on the market",
@@ -56,7 +56,7 @@ let products = [
     // cute goat
 
     {
-    id: "6",
+    id: 6,
     image: imagePath + "CuteGoat_Thumb.jpg",
     name: "Cute Goat",
     description: "A small white ceramic goat",
@@ -66,8 +66,8 @@ let products = [
     // lawn gnome
 
     {
-    id: "7",
-    image: imagePath + "Lawn Gnome_Thumb.jpg",
+    id: 7,
+    image: imagePath + "LawnGnome_Thumb.jpg",
     name: "Lawn Gnome",
     description: "An angry lawn gnome holding a sign that says 'GO AWAY!",
     price: "7.95",
@@ -76,7 +76,7 @@ let products = [
     // bob ross
 
     {
-    id: "8",
+    id: 8,
     image: imagePath + "BobRoss_Thumb.jpg",
     name: "Bob Ross",
     description: "A Bob Ross plastic figure holding a paint palette",

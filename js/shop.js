@@ -1,12 +1,10 @@
 
-const cardContainer =  document.querySelector("cardContainer");
+const cardContainer =  document.querySelector("#cardContainer");
 
 function addProducts() {
     products.forEach(individualCard => {
-        const cardTemplate = `
-        <div id="cardContainer">
-        <div class="products.card">
-            <div id="${individualCard.id}">
+        cardContainer.innerHTML +=  `
+        <div class="card" id="cardNumber${individualCard.id}">
                 <img src="${individualCard.image}" alt="${individualCard.description}">
                 <div class="cardText">
                     <h4>${individualCard.name}</h4>
@@ -14,12 +12,7 @@ function addProducts() {
                     <p>${individualCard.price}</p>
                     <button class="cartButton">Add to Cart</button>
                 </div>
-            </div>
-        </div>
         `;
-        
-        // ${individualCard.name}
-        cardContainer.innerHTML += cardTemplate;
     });
 }
 
