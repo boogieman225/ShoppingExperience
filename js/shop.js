@@ -19,7 +19,28 @@ function addProducts() {
 
 addProducts();
 
+function saveToLocalStorage(){
+    let cartButtons = document.getElementsByClassName('cartButton');
+    for (var i = 0; i < cartButtons.length; i++) {
+        cartButtons[i].addEventListener('click', function() {
+        let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
+        cart.push(selectedProduct);
+        localStorage.setItem("CART", JSON.stringify(cart) );
+        });
+        
+    }
+}
+function displayCart(){
 
+}
+
+displayCart();
+clearStorageAndCart();
+sideBarContainer.innerHTML = "";
+
+function displayCart(){
+    
+}
 /*
 
 //</div> Card Container
