@@ -1,6 +1,6 @@
 
-let cart = []
-const sideBarContainer = document.querySelectorAll(sideBarContainer);
+let cart = [];
+const sideBarContainer = document.querySelector("#sideBarContainer");
 
 function clearStorageAndCart(){
     cart = [];

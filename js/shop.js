@@ -20,41 +20,43 @@ function addProducts() {
 addProducts();
 
 function saveToLocalStorage(){
-    let cartButtons = document.getElementsByClassName('cartButton');
-    for (var i = 0; i < cartButtons.length; i++) {
-        cartButtons[i].addEventListener('click', function() {
-        let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
-        cart.push(selectedProduct);
-        localStorage.setItem("CART", JSON.stringify(cart) );
+    let cartButton = document.getElementsByClassName('cartButton');
+    for (let i = 0; i < cartButton.length; i++) {
+        cartButton[i].addEventListener('click', function() {  
+            let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
+            cart.push(selectedProduct);
+            console.log(selectedProduct);
+            localStorage.setItem("CART", JSON.stringify(cart) );
+            displayCart();
         });
-        
     }
 }
-function displayCart(){
 
-}
 
-displayCart();
-clearStorageAndCart();
-sideBarContainer.innerHTML = "";
 
 function displayCart(){
     
-}
-/*
-
-//</div> Card Container
-//
-//<div id="cardContainer">
-   <div class="card">
-        <div id="cardNumber1">
-            <img src="images/shop/thumbnails/ClownUmbrella_Thumb.jpg" alt="Clown figurine">
-            <div class="cardText">
-                <h4>Clown Umbrella</h4>
-                <p>A porcelain figurine of a clown holding an umbrella and riding a unicycle</p>
-                <p>&dollar; 29.95</p>
-                <button class="cartButton">Add to Cart</button>
+    // clearStorageAndCart();
+    sideBarContainer.innerHTML = "";
+    cart.forEach(cartItem => {
+        console.log(sideBarContainer);
+        sideBarContainer.innerHTML += `
+        <div class="tableRow">
+            <div class="tableCell">
+                ${cartItem.name}
+            </div>
+            <div class="tableCell">
+                &dollar; ${cartItem.price}
             </div>
         </div>
-    </div>
-*/
+        <div class="tableRow">
+            <div class="tableCell borderBottom">
+
+            </div>
+            <a id="${cartItem.id}" href="#" class="tableCell borderBottom removeLink">Remove</a>
+        </div>
+    `;
+    });
+}
+displayCart();
+saveToLocalStorage();
