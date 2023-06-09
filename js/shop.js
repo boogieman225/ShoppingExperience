@@ -1,5 +1,6 @@
 
 const cardContainer =  document.querySelector("#cardContainer");
+let checkoutButton = document.getElementById("#checkoutButton");
 
 function addProducts() {
     products.forEach(individualCard => {
@@ -32,11 +33,10 @@ function saveToLocalStorage(){
     }
 }
 
-
+saveToLocalStorage();
 
 function displayCart(){
-    
-    // clearStorageAndCart();
+    clearStorageAndCart();
     sideBarContainer.innerHTML = "";
     cart.forEach(cartItem => {
         console.log(sideBarContainer);
@@ -57,6 +57,11 @@ function displayCart(){
         </div>
     `;
     });
+    removeFromCart();
 }
+
 displayCart();
-saveToLocalStorage();
+
+checkoutButton.addEventListener('click', function(){
+    window.location.assign(cart.html);
+})
