@@ -1,18 +1,17 @@
 
 const cardContainer =  document.querySelector("#cardContainer");
-let checkoutButton = document.getElementById("#checkoutButton");
 
 function addProducts() {
     products.forEach(individualCard => {
         cardContainer.innerHTML +=  `
         <div class="card" id="cardNumber${individualCard.id}">
-            <img src="${individualCard.image}" alt="${individualCard.description}">
-                <div class="cardText">
-                    <h4>${individualCard.name}</h4>
-                    <p>${individualCard.description}</p>
-                    <p>&dollar; ${individualCard.price}</p>
-                    <button class="cartButton" id="${individualCard.id}">Add to Cart</button>
-                </div>
+        <img src="${individualCard.image}" alt="${individualCard.description}">
+        <div class="cardText">
+        <h4>${individualCard.name}</h4>
+        <p>${individualCard.description}</p>
+        <p>&dollar; ${individualCard.price}</p>
+        <button class="cartButton" id="${individualCard.id}">Add to Cart</button>
+        </div>
         </div>
         `;
     });
@@ -42,26 +41,29 @@ function displayCart(){
         console.log(sideBarContainer);
         sideBarContainer.innerHTML += `
         <div class="tableRow">
-            <div class="tableCell">
-                ${cartItem.name}
-            </div>
-            <div class="tableCell">
-                &dollar; ${cartItem.price}
-            </div>
+        <div class="tableCell">
+        ${cartItem.name}
+        </div>
+        <div class="tableCell">
+        &dollar; ${cartItem.price}
+        </div>
         </div>
         <div class="tableRow">
-            <div class="tableCell borderBottom">
-
-            </div>
-            <a id="${cartItem.id}" href="#" class="tableCell borderBottom removeLink">Remove</a>
+        <div class="tableCell borderBottom">
+        
         </div>
-    `;
+        <a id="${cartItem.id}" href="#" class="tableCell borderBottom removeLink">Remove</a>
+        </div>
+        `;
     });
     removeFromCart();
 }
 
 displayCart();
 
+let checkoutButton = document.getElementById("checkoutButton");
+
+
 checkoutButton.addEventListener('click', function(){
-    window.location.assign(cart.html);
-})
+    window.location = 'cart.html';
+});

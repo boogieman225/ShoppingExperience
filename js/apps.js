@@ -9,10 +9,13 @@ function clearStorageAndCart(){
         cart = currentStorage;
     }
 }
+
+
 function removeFromCart (){
-    var removeLink = getElementsByClassName("removeLink");
-    for (let i = 0; i < removeLink; i++){
-        removeLink.addEventListener('click', function(){
+    var removeLink = document.getElementsByClassName("removeLink");
+    console.log("Remove!");
+    for (let i = 0; i < removeLink.length; i++){
+        removeLink[i].addEventListener('click', function(event){
             clearStorageAndCart();
             let selectedProduct = cart.find( (cartItem) => cartItem.id == event.target.id);
             var itemIndex;
@@ -30,12 +33,13 @@ function removeFromCart (){
         });
     }
 }
+
 function clearCart(){
     const clearCartButton = document.getElementById("clearCartButton");
-    clearCartButton.addEventListener('.click', function(){
+    clearCartButton.addEventListener('click', function(){
         cart = [];
         localStorage.clear();
         displayCart();
-    })
+    });
 }
 clearCart(); 
