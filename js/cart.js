@@ -34,6 +34,89 @@ function displayCartProducts(){
 displayCartProducts();
 
 
+function calculateOrderSummary(){
+    let subtotal = 0,
+        shipping = 0,
+        tax = 0,
+        total = 0;
+    
+    clearStorageAndCart();
+    cart.forEach((cartItem) => {
+        subtotal += cartItem.price;
+        shipping += 1;
+    });
+
+    tax = (subtotal + shipping) * 0.061;
+    total = subtotal + shipping + tax;
+
+}
+
+
+function displayOrderSummary(){
+    calculateOrderSummary();
+    sideBarContainer.innerHTML += `
+        <div class="tableRow">
+            <div class="tableCell">
+                Subtotal
+            </div>
+            <div class="tableCell">
+                &dollar; ${subtotal.toFixed(2)}
+            </div>
+        </div>
+        <div class="tableRow">
+            <div class="tableCell">
+                Shipping
+            </div>
+            <div class="tableCell">
+                &dollar; ${shipping.toFixed(2)}
+            </div>
+        </div>
+        <div class="tableRow">
+            <div class="tableCell">
+                Tax
+            </div>
+            <div class="tableCell">
+                &dollar; ${tax.toFixed(2)}
+            </div>
+        </div>
+        <div class="tableRow">
+            <div class="tableCell">
+                Total
+            </div>
+            <div class="tableCell">
+                &dollar; ${total.toFixed(2)}
+            </div>
+        </div>
+
+        <div id="cartButtons">
+            <button id="clearCartButton">
+                Clear Cart
+            </button>
+            <button id="checkoutButton">
+                Checkout
+            </button>
+        </div>
+  `;
+
+}
+
+displayOrderSummary();
+
+
+/*
+CART
+</div>
+<div id="sideBarContainer">
+
+</div>
+<div id="cartButtons">
+    <button id="clearCartButton">
+        Clear Cart
+    </button>
+    <button id="checkoutButton">
+        Checkout
+    </button>
+*/
 
 
 
