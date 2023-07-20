@@ -1,12 +1,12 @@
 
-let  cartCardContainer = document.querySelector("cartCardContainer");
+const cartCardContainer = document.querySelector("#cartCardContainer");
 
-function displayCartProducts (){
+function displayCartProducts(){
     clearStorageAndCart();
     cartCardContainer.innerHTML = "";
 
     if (0 < cart.length){
-        cart.forEach( cartCard => {
+        cart.forEach(individualCard => {
             cartCard.innerHTML += `
                 <div class="cartCard">
                 <div class="cartCardFlex">
@@ -14,12 +14,12 @@ function displayCartProducts (){
                     <p class="cartTitle">${individualCard.name}</p>
                     <p class="cartDescription">${individualCard.description}</p>
                     <div class="cartQuantity">
-                        <input type="number" value="quantity" min="1" max="5" ><br>
+                        <input type="number" value="${individualCard.quantity}" min="1" max="5" ><br>
                     </div>
                     <p class="cartPrice">&dollar; ${individualCard.price}</p>
                 </div>
                 <p class="textAlignRight removeMargins">
-                    <a href="#" class="removeLink">Remove</a>
+                    <a href="#" id="${cartItem.id}" class="removeLink">Remove</a>
                 </p>
                 </div>
             `;
@@ -28,8 +28,8 @@ function displayCartProducts (){
     }
     else {
         cartCardContainer.innerHTML = "<p id='emptyCart'>The cart is empty.</p>";
-    };
-};
+    }
+}
 
 displayCartProducts();
 
