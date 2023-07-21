@@ -6,17 +6,17 @@ function displayCartProducts(){
     cartCardContainer.innerHTML = "";
 
     if (0 < cart.length){
-        cart.forEach(individualCard => {
-            cartCard.innerHTML += `
+        cart.forEach(cartItem => {
+            cartCardContainer.innerHTML += `
                 <div class="cartCard">
                 <div class="cartCardFlex">
-                <img src="${individualCard.image}" alt="${individualCard.description}">
-                    <p class="cartTitle">${individualCard.name}</p>
-                    <p class="cartDescription">${individualCard.description}</p>
+                <img src="${cartItem.image}" alt="${cartItem.description}">
+                    <p class="cartTitle">${cartItem.name}</p>
+                    <p class="cartDescription">${cartItem.description}</p>
                     <div class="cartQuantity">
-                        <input type="number" value="${individualCard.quantity}" min="1" max="5" ><br>
+                        <input type="number" value="${cartItem.quantity}" min="1" max="5" ><br>
                     </div>
-                    <p class="cartPrice">&dollar; ${individualCard.price}</p>
+                    <p class="cartPrice">&dollar; ${cartItem.price}</p>
                 </div>
                 <p class="textAlignRight removeMargins">
                     <a href="#" id="${cartItem.id}" class="removeLink">Remove</a>
