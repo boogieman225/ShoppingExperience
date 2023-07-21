@@ -33,71 +33,69 @@ function displayCartProducts(){
 
 displayCartProducts();
 
+let subtotal = 0;
+let shipping = 0;
+let tax = 0;
+let total = 0;
 
 function calculateOrderSummary(){
-    let subtotal = 0,
-        shipping = 0,
-        tax = 0,
-        total = 0;
-    
     clearStorageAndCart();
+    
+    subtotal = 0;
+    shipping = 0;
+    tax = 0;
+    total = 0;
+
     cart.forEach((cartItem) => {
         subtotal += cartItem.price;
         shipping += 1;
     });
-
+    
     tax = (subtotal + shipping) * 0.061;
-    total = subtotal + shipping + tax;
-
+    total = subtotal + shipping + tax; 
 }
 
 
 function displayOrderSummary(){
     calculateOrderSummary();
-    sideBarContainer.innerHTML += `
-        <div class="tableRow">
-            <div class="tableCell">
-                Subtotal
-            </div>
-            <div class="tableCell">
-                &dollar; ${subtotal.toFixed(2)}
-            </div>
-        </div>
-        <div class="tableRow">
-            <div class="tableCell">
-                Shipping
-            </div>
-            <div class="tableCell">
-                &dollar; ${shipping.toFixed(2)}
-            </div>
-        </div>
-        <div class="tableRow">
-            <div class="tableCell">
-                Tax
-            </div>
-            <div class="tableCell">
-                &dollar; ${tax.toFixed(2)}
-            </div>
-        </div>
-        <div class="tableRow">
-            <div class="tableCell">
-                Total
-            </div>
-            <div class="tableCell">
-                &dollar; ${total.toFixed(2)}
-            </div>
-        </div>
-
-        <div id="cartButtons">
-            <button id="clearCartButton">
-                Clear Cart
-            </button>
-            <button id="checkoutButton">
-                Checkout
-            </button>
-        </div>
-  `;
-
+    console.log(total);
+    sideBarContainer.innerHTML = `
+    <div class="tableRow">
+    <div class="tableCell">
+    Subtotal
+    </div>
+    <div class="tableCell">
+    &dollar; ${subtotal.toFixed(2)}
+    </div>
+    </div>
+    <div class="tableRow">
+    <div class="tableCell">
+    Shipping
+    </div>
+    <div class="tableCell">
+    &dollar; ${shipping.toFixed(2)}
+    </div>
+    </div>
+    <div class="tableRow">
+    <div class="tableCell">
+    Tax
+    </div>
+    <div class="tableCell">
+    &dollar; ${tax.toFixed(2)}
+    </div>
+    </div>
+    <div class="tableRow">
+    <div class="tableCell">
+    Total
+    </div>
+    <div class="tableCell">
+    &dollar; ${total.toFixed(2)}
+    </div>
+    </div>
+    
+    `;
+    
+    console.log(subtotal);      // log subtotal
 }
 
 displayOrderSummary();

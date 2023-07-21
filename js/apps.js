@@ -29,15 +29,16 @@ function removeFromCart (){
             
             if (typeof displayCart === "function") {
                 displayCart();
+                displayCartProducts();
+                displayOrderSummary();
             }
             if (typeof displayCartProducts === "function") {
+                displayOrderSummary();
                 displayCartProducts();
+                console.log("Hello Kevin!");
             }
             if (cart.length == 0) {
                 localStorage.clear();
-            }
-            if (typeof displayCartProducts === "function"){
-                displayOrderSummary();
             }
         });
     }
@@ -54,10 +55,9 @@ function clearCart(){
         }
         if (typeof displayCartProducts === "function") {
             displayCartProducts();
-        }
-        if (typeof displayCartProducts === "function"){
             displayOrderSummary();
         }
+       
     });
 }
 clearCart(); 
