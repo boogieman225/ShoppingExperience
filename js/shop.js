@@ -24,13 +24,18 @@ function saveToLocalStorage(){
     for (let i = 0; i < cartButton.length; i++) {
         cartButton[i].addEventListener('click', function() {  
             let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
-            cart.push(selectedProduct);
+            let cartItemSearch = cart.find( (cartItem) => cartItem.id == selectedProduct.id);
+            if (cartItemSearch){
+                cartItemSearch.quantity++;
+            } else{
+                cart.push(selectedProduct);
+            }
             console.log(selectedProduct);
             localStorage.setItem("CART", JSON.stringify(cart) );
             displayCart();
         });
-    }
-}
+    };
+};
 
 saveToLocalStorage();
 
@@ -50,13 +55,14 @@ function displayCart(){
         </div>
         <div class="tableRow">
         <div class="tableCell borderBottom">
-        
+        <input class="quantityNumberInput" id="${cartItem.id}" type="number" value="${cartItem.quantity}" min="1" max="5"></input>
         </div>
         <a id="${cartItem.id}" href="#" class="tableCell borderBottom removeLink">Remove</a>
         </div>
         `;
     });
     removeFromCart();
+    updateQuantity();
 }
 
 displayCart();

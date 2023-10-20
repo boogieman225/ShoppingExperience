@@ -61,3 +61,41 @@ function clearCart(){
     });
 }
 clearCart(); 
+
+function updateQuantity(){
+    let quantityNumberInput = document.getElementsByClassName("quantityNumberInput");
+
+    for (let i = 0; i < quantityNumberInput.length; i++){
+        addEventListener('change', (event) => {
+            let quantityChanged = quantityNumberInput[i].value;
+            if(quantityChanged > 5){
+                quantityChanged = 5;
+            }
+            let itemToChange = cart.find( (item) => item.id == event.target.id);
+            itemToChange.quantity = +quantityChanged;
+            localStorage.setItem("CART", JSON.stringify(cart));     // update local storage
+            if(typeof displayOrderSummary == "function"){
+                displayOrderSummary();
+            }
+        });
+    }
+}
+
+
+$(document).ready(function(){
+    let sidebarOrigin = $('aside').offset();
+
+    $('window').scroll(function(){
+        let scrollPosition = $('html').scrollTop();
+        if(sidebarOrigin.top < scrollPosition){
+            $('aside').addClass('sticky');
+            if($('aside').hasClass('sticky')){
+                $('aside').css('width', '17.9%');
+            }
+        }
+        else{
+            $('aside').removeClass('sticky');
+            $('aside').css('width', '20%');
+        }
+    });
+});
