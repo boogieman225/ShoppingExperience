@@ -145,6 +145,7 @@ $(document).ready(function() {
             currentPage++;
             paginate();
             saveToLocalStorage();
+            fadeButtons();
         }
     });
     $('#prevButton').click(function(){
@@ -153,6 +154,7 @@ $(document).ready(function() {
         }
         paginate();
         saveToLocalStorage();
+        fadeButtons();
     });
 });
 
