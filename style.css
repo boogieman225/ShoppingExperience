@@ -131,7 +131,8 @@ footer {
     padding-left: 0;
 
 }
-#cartButtons button {
+#cartButtons button,
+#paginateButtons button {
     background-color: #037DBE;
     border: 0;
     border-radius: 3px;
@@ -139,11 +140,18 @@ footer {
     padding: 2%;
     cursor: pointer;
 }
-#cartButtons #clearCartButton {
+#cartButtons #clearCartButton, 
+#paginateButtons #clearCartButton {
     background-color: #EEEEEE;
     border: solid 1px #037DBE;
     color: #037DBE;
-    
+}
+#paginateButtons button{
+    padding: .5%;
+    width: 8%;
+}
+#paginateButtons {
+    text-align: right;
 }
 .borderBottom {
     border-bottom: 1px solid #BBBBBB;
@@ -243,4 +251,9 @@ footer {
 }
 #checkoutThankYou {
     padding: 10px;
+}
+#paginateButtons {
+    border-color: #BBBBBB;
+    color: #BBBBBB;
+    cursor: auto;
 }

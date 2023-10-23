@@ -1,6 +1,8 @@
 
 const cardContainer =  document.querySelector("#cardContainer");
 
+
+
 function addProducts() {
     products.forEach(individualCard => {
         cardContainer.innerHTML +=  `
@@ -73,3 +75,84 @@ let checkoutButton = document.getElementById("checkoutButton");
 checkoutButton.addEventListener('click', function(){
     window.location = 'cart.html';
 });
+
+
+// paginate step
+
+
+let productsPerPage = 6;
+let currentPage = 1;
+let pagedResults = [];
+let totalProducts = products.length;
+
+function paginate(){
+    let end = currentPage * productsPerPage;
+    let start =  end - productsPerPage; 
+    
+    pagedResults = products.slice(start, end);
+    
+    $('#cardContainer').empty();
+    
+    $.each(pagedResults, function(index, individualCard) {
+        $('#cardContainer').append(`
+
+            <!-- Card Container -->
+
+            <div class="card" id="cardNumber${individualCard.id}">
+                <img src="${individualCard.image}" alt="${individualCard.description}">
+                <div class="cardText">
+                    <h4>${individualCard.name}</h4>
+                    <p>${individualCard.description}</p>
+                    <p>&dollar; ${individualCard.price}</p>
+                    <button class="cartButton" id="${individualCard.id}">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- End Card Container -->
+
+        `);
+    });
+
+    // disable prev button on first page
+
+    if(currentPage <=1){
+        $('#prevButton').attr('disabled', true);
+    }
+    else{
+        $('#prevButton').attr('disabled', false);
+    }
+
+    // disable next button on last page
+
+    if((currentPage * productsPerPage) >= totalProducts){
+        $('#nextButton').attr('disabled', true);
+    }
+    else{
+        $('#nextButton').attr('disabled', false);
+    }
+}
+
+paginate();
+
+
+// paginate step end
+
+
+$(document).ready(function() {
+
+    $('#nextButton').click(function(){
+        if((currentPage * productsPerPage) <= totalProducts){ // currentPage * productsPerPage -> This calculates what the last product on the current page is
+            currentPage++;
+            paginate();
+            saveToLocalStorage();
+        }
+    });
+    $('#prevButton').click(function(){
+        if (currentPage > 1) {
+            currentPage--;
+        }
+        paginate();
+        saveToLocalStorage();
+    });
+});
+
